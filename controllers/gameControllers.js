@@ -21,11 +21,11 @@ exports.getSentence = async (req , res ) => {
 
 exports.doesWon = async (req ,res) => {
     try{
-        const {timeTaken , enteredSentence } = req.body;
+        const {timeTaken , score } = req.body;
         const {email} = req.user;
         
         // Time taken by user is more than 3 minutes or submission by user is wrong
-        if(Number(timeTaken) > 3 || enteredSentence!== sentence) {
+        if(Number(timeTaken) > 3 || score === "0") {
             return res.status(201).json({
                 success : true,
                 Won : false ,
