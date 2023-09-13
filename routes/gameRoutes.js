@@ -5,7 +5,7 @@ const { auth } = require('../middleware/auth');
 const router = express.Router();
 
 // adding the auth middleware before attending the request to authenticate a valid user
-router.get('/sentence' , auth , getSentence);
+router.post('/sentence' , auth , getSentence);
 router.post('/result' , auth , doesWon);
 
 module.exports = router;
